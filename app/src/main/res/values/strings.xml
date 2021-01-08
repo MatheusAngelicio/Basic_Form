@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Basic Form</string>
+    <string name="what_is_your_nickname">Digite seu nome</string>
+    <string name="what_is_your_age">Idade</string>
+    <string name="what_is_your_phone">Telefone</string>
+    <string name="what_is_your_rg">RG</string>
+    <string name="what_is_your_cpf">CPF</string>
+    <string name="what_is_your_city">Cidade</string>
+    <string name="gender">Genero</string>
+
+    <array name="state">
+        <item>Selecione um Estado</item>
+        <item>Acre</item>
+        <item>Alagoas</item>
+        <item>Amapá</item>
+        <item>Amazonas</item>
+        <item>Bahia</item>
+        <item>Ceará</item>
+        <item>Distrito Federal</item>
+        <item>Espírito Santo</item>
+        <item>Goiás</item>
+        <item>Maranhão</item>
+        <item>Mato Grosso</item>
+        <item>Mato Grosso do Sul</item>
+        <item>Minas Gerais</item>
+        <item>Pará</item>
+        <item>Paraíba</item>
+        <item>Paraná</item>
+        <item>Pernambuco</item>
+        <item>Piauí</item>
+        <item>Rio de Janeiro</item>
+        <item>Rio Grande do Norte</item>
+        <item>Rio Grande do Sul</item>
+        <item>Rondônia</item>
+        <item>Roraima</item>
+        <item>Santa Catarina</item>
+        <item>São Paulo</item>
+        <item>Sergipe</item>
+        <item>Tocantins</item>
+    </array>
+
+    <string name="save_form">Salvo com sucesso!</string>
+    <string name="missing_name">Informe o nome</string>
+    <string name="missing_age">Informe a idade</string>
+    <string name="missing_phone">Informe o telefone</string>
+    <string name="missing_rg">Informe o RG</string>
+    <string name="missing_cpf">Informe o CPF</string>
+    <string name="missing_city">Informe a cidade</string>
+
+</resources>
