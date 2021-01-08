@@ -75,6 +75,7 @@
                             android:layout_height="wrap_content"
                             android:background="@color/white"
                             android:hint="@string/what_is_your_age"
+                            android:maxLength="3"
                             android:text="@={viewModel.person_age}"
                             android:inputType="number"
                             tools:targetApi="o" />
@@ -96,7 +97,6 @@
                             android:hint="@string/what_is_your_phone"
                             android:text="@={viewModel.person_phone}"
                             android:inputType="number"
-                            android:maxLength="2"
                             tools:targetApi="o" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -142,7 +142,6 @@
                             android:hint="@string/what_is_your_cpf"
                             android:text="@={viewModel.person_cpf}"
                             android:inputType="number"
-                            android:maxLength="2"
                             tools:targetApi="o" />
 
                     </com.google.android.material.textfield.TextInputLayout>
