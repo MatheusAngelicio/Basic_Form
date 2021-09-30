@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import br.tecpuc.basicform.databinding.ActivityMainBinding
+import br.tecpuc.basicform.input.InputTextWatcher
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,10 +26,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         binding.buttonSave.setOnClickListener { viewModel.save() }
+
+        binding.editTextNickName.addTextChangedListener(InputTextWatcher(binding.inputNickName))
+        binding.editTextAge.addTextChangedListener(InputTextWatcher(binding.inputAge))
+        binding.editTextPhone.addTextChangedListener(InputTextWatcher(binding.inputPhone))
+        binding.editTextRg.addTextChangedListener(InputTextWatcher(binding.inputRg))
+        binding.editTextCpf.addTextChangedListener(InputTextWatcher(binding.inputCpf))
+        binding.editTextCity.addTextChangedListener(InputTextWatcher(binding.inputCity))
     }
 
     private fun observeViewModel() {
-
         viewModel.formSaved.observe(this, {
             it?.getContentIfNotHandled()?.let {
                 Toast.makeText(this, getString(R.string.save_form), Toast.LENGTH_LONG).show()
@@ -37,13 +44,10 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.isError.observe(this, {
             it?.getContentIfNotHandled()?.let { isError ->
-
                 if (!isError) return@observe
-
                 viewModel.error.forEach { error -> handleError(error) }
             }
         })
-
     }
 
 
@@ -71,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
             FormError.MISSING_CPF -> {
                 binding.inputCpf.error = getString(R.string.missing_cpf)
-                binding.editTextRg.requestFocus()
+                binding.editTextCpf.requestFocus()
             }
 
             FormError.MISSING_CITY -> {
