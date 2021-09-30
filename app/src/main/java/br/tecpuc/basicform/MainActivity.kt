@@ -5,17 +5,17 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import br.tecpuc.basicform.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private val viewModel = MainViewModel()
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding =
-            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        buttonSave.setOnClickListener { viewModel.save() }
+        binding.buttonSave.setOnClickListener { viewModel.save() }
     }
 
     private fun observeViewModel() {
@@ -50,33 +50,33 @@ class MainActivity : AppCompatActivity() {
     private fun handleError(error: FormError) {
         when (error) {
             FormError.MISSING_NAME -> {
-                inputNickName.error = getString(R.string.missing_name)
-                editTextNickName.requestFocus()
+                binding.inputNickName.error = getString(R.string.missing_name)
+                binding.editTextNickName.requestFocus()
             }
 
             FormError.MISSING_AGE -> {
-                inputAge.error = getString(R.string.missing_age)
-                editTextAge.requestFocus()
+                binding.inputAge.error = getString(R.string.missing_age)
+                binding.editTextAge.requestFocus()
             }
 
             FormError.MISSING_PHONE -> {
-                inputPhone.error = getString(R.string.missing_phone)
-                editTextPhone.requestFocus()
+                binding.inputPhone.error = getString(R.string.missing_phone)
+                binding.editTextPhone.requestFocus()
             }
 
             FormError.MISSING_RG -> {
-                inputRg.error = getString(R.string.missing_rg)
-                editTextRg.requestFocus()
+                binding.inputRg.error = getString(R.string.missing_rg)
+                binding.editTextRg.requestFocus()
             }
 
             FormError.MISSING_CPF -> {
-                inputCpf.error = getString(R.string.missing_cpf)
-                editTextRg.requestFocus()
+                binding.inputCpf.error = getString(R.string.missing_cpf)
+                binding.editTextRg.requestFocus()
             }
 
             FormError.MISSING_CITY -> {
-                inputCity.error = getString(R.string.missing_city)
-                editTextCity.requestFocus()
+                binding.inputCity.error = getString(R.string.missing_city)
+                binding.editTextCity.requestFocus()
             }
 
             else -> FormError.UNKNOWN
